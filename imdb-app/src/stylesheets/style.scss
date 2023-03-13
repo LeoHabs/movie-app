@@ -1,0 +1,41 @@
+$primary-color: #22254b;
+$secondary-color: #373b69;
+$terciary-color: black;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  background-color: $secondary-color;
+
+  input {
+    height: 40px;
+    width: 200px;
+    border-radius: 15px;
+    border: $terciary-color 2px solid;
+    background-color: transparent;
+    margin-right: 10px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 1.5em;
+    color: white;
+    &::placeholder {
+      color: powderblue;
+      opacity: 0.5;
+    }
+  }
+}
+
+main {
+    height: 95vh;
+    background-color: $primary-color;
+    overflow-y: scroll;
+}
