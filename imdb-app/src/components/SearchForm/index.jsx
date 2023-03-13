@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
+import {SubmitFormContext} from "../../App.js";
 
-export default function SearchForm() {
-  const [inputContent, setInputContent] = useState();
-  const [formContent, setFormContent] = useState();
+
+
+export default function SearchForm( {}) {
+  const [inputContent, setInputContent] = useState("");
+  const {setSearchContent} = useContext(SubmitFormContext);
 
   return (
     <>
       <form
         onSubmit={() => {
-          setFormContent(inputContent);
+          setSearchContent(inputContent)
         }}>
         <input
           placeholder="Search"
           value={inputContent}
-          onChange={(e) => {
+          onInput={(e) => {
             setInputContent(e.target.value);
           }}
           type="text"
@@ -21,4 +24,4 @@ export default function SearchForm() {
       </form>
     </>
   );
-}
+};

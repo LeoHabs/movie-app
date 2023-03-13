@@ -1,11 +1,12 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import MovieCard from "../MovieCard";
+import { MovieListContext } from "../../App.js";
+
 
 export default function CardsContainer() {
-  const [movieList, setMovieList] = useState;
-
-  const renderMovieList = movieList.map((e, i) => {
+  const { loadedMovieList } = useContext(MovieListContext);
+  const renderMovieList = loadedMovieList?.map((e, i) => {
     return (
       <MovieCard
         key={i}
@@ -14,7 +15,5 @@ export default function CardsContainer() {
         score={e.imDbRating}></MovieCard>
     );
   });
-  return <>
-    {renderMovieList}
-  </>;
+  return <>{renderMovieList}</>;
 }
