@@ -7,15 +7,12 @@ export const SubmitFormContext = createContext(null);
 
 
 function App() {
-  
   const [movieList,setMovieList] = useState();
   const [filteredMovieList,setFilteredMovieList] = useState(movieList);
   const [searchBarSubmit, setSearchBarSubmit] = useState("");
 
-
   useEffect(()=>{
-    console.log(searchBarSubmit);
-    
+    setFilteredMovieList(movieList?.filter((e)=>(e.title.includes(searchBarSubmit))))
   },[searchBarSubmit]);
 
   useEffect(()=> {
@@ -32,7 +29,6 @@ function App() {
       })
       .catch(console.log("Ih rapaiz aí deu errado"));
   },[]);
-  
   return <>
   <MovieListContext.Provider value={{loadedMovieList: filteredMovieList}}>
     <SubmitFormContext.Provider value={{setSearchContent: setSearchBarSubmit}}>

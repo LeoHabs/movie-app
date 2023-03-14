@@ -47,14 +47,18 @@ main {
   .movieCard {
     position: relative;
     background-color: $primary-color;
+    box-sizing: border-box;
     margin: 10px;
     color: white;
     width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px black;
     img {
       height: 450px;
       width: 300px;
+      border-radius: 5px 5px 0px 0px;
     }
-    div {
+    div:first-of-type {
       display: flex;
       justify-content: space-between;
       box-sizing: border-box;
@@ -62,7 +66,8 @@ main {
       height: 100px;
       padding: 20px;
       line-break: strict;
-
+      z-index: 1;
+      overflow-y: hidden;
       h4 {
         background-color: $secondary-color;
         padding: 4px;
@@ -71,6 +76,40 @@ main {
         margin: 5px 5px 5px 5px;
         height: fit-content;
       }
+    }
+
+    #more-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 5px;
+      top: 0;
+      height: 100%;
+      background-color: white;
+      color: #373b69;
+      z-index: 2;
+      padding: 25px;
+      transition: opacity 0.4s;
+
+      h3 {
+        font-size: 25px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    .moreInfo--hidden {
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    .moreInfo--show {
+      opacity: 0.95;
     }
   }
 }
