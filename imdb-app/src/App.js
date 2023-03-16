@@ -21,7 +21,7 @@ function App() {
       redirect: "follow"
     };
 
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_66vntstq",requestOptions)
+    fetch("https://imdb-api.com/en/API/Top250Movies/k_12345678",requestOptions)
       .then(response => response.json())
       .then(response => {
         setMovieList(response.items);
