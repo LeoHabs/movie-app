@@ -6,6 +6,7 @@ import { MovieListContext } from "../../App.js";
 
 export default function CardsContainer() {
   const { loadedMovieList } = useContext(MovieListContext);
+
   const renderMovieList = loadedMovieList?.map((e, i) => {
     return (
       <MovieCard
@@ -15,8 +16,11 @@ export default function CardsContainer() {
         score={e.imDbRating}
         year={e.year}
         crew={e.crew}
-        ></MovieCard>
+      />
     );
   });
-  return <>{renderMovieList}</>;
+
+  return <>
+    {renderMovieList}
+  </>;
 }

@@ -1,9 +1,9 @@
-import React, { useState , useContext } from "react";
-import {SubmitFormContext} from "../../App.js";
+import React, { useState, useContext } from "react";
+import { SubmitFormContext } from "../../App.js";
 
 export default function SearchForm() {
   const [inputContent, setInputContent] = useState("");
-  const {setSearchContent} = useContext(SubmitFormContext);
+  const { setSearchContent } = useContext(SubmitFormContext);
   return (
     <>
       <form

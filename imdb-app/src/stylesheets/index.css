@@ -5,27 +5,41 @@
 
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 5vh;
+  height: 6vh;
   background-color: #22254b;
+}
+header button {
+  background: #22254b;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0 16px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 40px;
+  margin-left: 20px;
+}
+header img {
+  height: 50%;
 }
 header input {
   height: 40px;
   width: 200px;
   border-radius: 15px;
-  border: black 2px solid;
+  border: #373b69 4px solid;
   background-color: transparent;
   margin-right: 10px;
   padding-left: 18px;
   box-sizing: border-box;
   outline: none;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: white;
 }
 header input::placeholder {
-  color: powderblue;
+  color: white;
   opacity: 0.5;
 }
 
@@ -101,6 +115,18 @@ main .movieCard .moreInfo--hidden {
 }
 main .movieCard .moreInfo--show {
   opacity: 0.95;
+}
+
+.green-score {
+  color: green;
+}
+
+.red-score {
+  color: red;
+}
+
+.yellow-score {
+  color: yellow;
 }
 
 /*# sourceMappingURL=index.css.map */
