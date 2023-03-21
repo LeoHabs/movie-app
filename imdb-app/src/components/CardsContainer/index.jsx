@@ -13,7 +13,7 @@ export default function CardsContainer() {
         key={i}
         image={e.image}
         title={e.title}
-        score={e.imDbRating}
+        score={e?.imDbRating}
         year={e.year}
         crew={e.crew}
       />

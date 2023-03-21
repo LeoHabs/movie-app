@@ -35,14 +35,14 @@ function App() {
       redirect: "follow"
     };
 
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_12345678", requestOptions)
+    fetch(`https://imdb-api.com/${lang}/API/Top250Movies/k_12345678`, requestOptions)
       .then(response => response.json())
       .then(response => {
         setMovieList(response.items);
         setFilteredMovieList(response.items);
       })
       .catch(console.log("Ih rapaiz aí deu errado"));
-  }, []);
+  }, [lang]);
 
   useEffect(() => {
     const requestOptions = {
@@ -50,16 +50,19 @@ function App() {
       redirect: "follow"
     };
 
-    fetch("https://imdb-api.com/en/API/ComingSoon/12345678", requestOptions)
+    fetch(`https://imdb-api.com/${lang}/API/ComingSoon/12345678`, requestOptions)
       .then(response => response.json())
       .then(response => {
         setComingSoon(response.items);
       })
       .catch(console.log("Ih rapaiz aí deu errado"));
-  }, []);
+  }, [lang]);
 
   return <>
-    <MovieListContext.Provider value={{ loadedMovieList: filteredMovieList }}>
+    <MovieListContext.Provider value={{
+      loadedMovieList: filteredMovieList,
+      setAppLang: setLang
+    }}>
       <SubmitFormContext.Provider value={{ setSearchContent: setSearchBarSubmit }}>
         <ComingSoonBtnContext.Provider value={comingSoonMap}>
           <Header />

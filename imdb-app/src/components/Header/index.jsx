@@ -6,7 +6,6 @@ import LanguageSelector from "../LanguageSelector";
 export default function Header() {
     const comingBtnState = useContext(ComingSoonBtnContext);
 
-    console.log(comingBtnState);
     return <>
         <header>
             <LanguageSelector></LanguageSelector>
