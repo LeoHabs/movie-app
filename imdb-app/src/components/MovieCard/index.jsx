@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { LanguageContext } from "../../App.js"
 
-export default function MovieCard({ image, title, score, crew, year }) {
+export default function MovieCard({ image, title, score, crew, year, id }) {
   const [displayState, setDisplayState] = useState("--hidden");
+  const langContext = useContext(LanguageContext);
 
   function getScoreColor(score) {
     if (score >= 7) {
@@ -14,6 +16,12 @@ export default function MovieCard({ image, title, score, crew, year }) {
     return "red-score"
   }
 
+  const clickHandler = () => {
+    fetch(`https://imdb-api.com/${langContext}/API/Title/k_jy7bm1my/${id}`)
+      .then(r => r.json())
+      .then(r => console.log(r));
+  };
+
   return (
     <>
       <div
@@ -24,6 +32,7 @@ export default function MovieCard({ image, title, score, crew, year }) {
         onMouseLeave={() => {
           setDisplayState("--hidden");
         }}
+        onClick={clickHandler}
       >
         <img src={image} alt={`Official poster for ${title}`} />
         <div>
