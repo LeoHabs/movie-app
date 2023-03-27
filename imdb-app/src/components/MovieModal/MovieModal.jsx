@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../App";
 
-function MovieModal({ movie }) {
+function MovieModal({ movie, display }) {
     const langContext = useContext(LanguageContext);
 
     return (
-        <div className="movieModal">
+        <div className={`movieModal ${display ? "dtl-show" : "dtl-hide"}`}>
             <div>
                 <img src={movie.image} alt="Movie poster" />
             </div>

@@ -152,7 +152,7 @@ main {
   background-color: #373b69;
   border-radius: 10px;
   box-shadow: 0px 1px 10px black;
-  z-index: 2;
+  z-index: 999;
 
   img {
     height: 900px;
@@ -169,8 +169,6 @@ main {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-
-  
 
   p {
     margin: 60px 0px 60px 0px;
@@ -197,4 +195,12 @@ main {
   h2 {
     width: 50%;
   }
+}
+
+.dtl-show {
+  display: flex;
+}
+
+.dtl-hide {
+  display: none;
 }

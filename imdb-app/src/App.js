@@ -380,7 +380,6 @@ function App() {
           <main>
             <LanguageContext.Provider value={lang}>
               <CardsContainer />
-              <MovieModal movie={testObj}></MovieModal>
             </LanguageContext.Provider>
           </main>
         </ComingSoonBtnContext.Provider>

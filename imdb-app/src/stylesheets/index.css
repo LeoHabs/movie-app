@@ -139,7 +139,7 @@ main .movieCard .moreInfo--show {
   background-color: #373b69;
   border-radius: 10px;
   box-shadow: 0px 1px 10px black;
-  z-index: 2;
+  z-index: 999;
 }
 .movieModal img {
   height: 900px;
@@ -178,6 +178,14 @@ main .movieCard .moreInfo--show {
 }
 .line h2 {
   width: 50%;
+}
+
+.dtl-show {
+  display: flex;
+}
+
+.dtl-hide {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */
