@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { LanguageContext } from "../../App.js"
+import { LanguageContext } from "../../pages/Main"
 import MovieModal from "../MovieModal/MovieModal.jsx";
 
 export default function MovieCard({ image, title, score, crew, year, id }) {
@@ -22,8 +22,8 @@ export default function MovieCard({ image, title, score, crew, year, id }) {
   const clickHandler = async () => {
     const movieDetail = await fetch(`https://imdb-api.com/${langContext}/API/Title/k_jy7bm1my/${id}`)
       .then(r => r.json())
-    await setDetailObj(movieDetail)
-    await setIsDtlOpen(true)
+    await setDetailObj(movieDetail);
+    await setIsDtlOpen(true);
   };
 
   return (
@@ -48,7 +48,7 @@ export default function MovieCard({ image, title, score, crew, year, id }) {
           <h4>{crew}</h4>
         </div>
       </div>
-      <MovieModal movie={detailObj} display={isDtlOpen}></MovieModal>
+      <MovieModal movie={detailObj} display={isDtlOpen} setDisplay={setIsDtlOpen}></MovieModal>
     </>
   );
 }

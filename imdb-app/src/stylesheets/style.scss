@@ -204,3 +204,54 @@ main {
 .dtl-hide {
   display: none;
 }
+
+.closeBtn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid white;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #373b69;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

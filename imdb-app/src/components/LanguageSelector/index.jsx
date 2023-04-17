@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { MovieListContext } from "../../App";
+import { MovieListContext } from "../../pages/Main";
 
 export default function LanguageSelector() {
     const [selectOption, setSelectOption] = useState("en");

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { LanguageContext } from "../../App";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { LanguageContext } from "../../pages/Main";
 
-function MovieModal({ movie, display }) {
+function MovieModal({ movie, display, setDisplay }) {
     const langContext = useContext(LanguageContext);
 
     return (
@@ -10,6 +11,7 @@ function MovieModal({ movie, display }) {
                 <img src={movie.image} alt="Movie poster" />
             </div>
             <div className="detailsModal">
+                <button className="closeBtn" onClick={() => setDisplay(false)}><AiOutlineCloseCircle size={30} /></button>
                 <h1>{movie.title}</h1>
                 <h3>({movie.year})</h3>
                 <p>{langContext === "en" ? movie.plot : movie.plotLocal}</p>
@@ -28,7 +30,7 @@ function MovieModal({ movie, display }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

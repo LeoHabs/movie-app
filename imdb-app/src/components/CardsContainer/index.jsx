@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import MovieCard from "../MovieCard";
-import { MovieListContext } from "../../App.js";
+import { MovieListContext } from "../../pages/Main";
 
 
 export default function CardsContainer() {
