@@ -2,35 +2,46 @@ import { AiOutlineHome } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Firebase from "../gateway/Firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../UserProvider.js";
+import { FaUserAlt } from "react-icons/fa";
 
 
 function SignUp() {
     const [emailInput, setEmailInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const navigate = useNavigate();
+    const { user } = useContext(UserContext);
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const userCredentials = await createUserWithEmailAndPassword(
+            createUserWithEmailAndPassword(
                 Firebase.auth,
                 emailInput,
                 passwordInput
-            );
+            )
         } catch (error) {
             console.log({ error });
         }
 
     };
 
+    useEffect(()=>{
+        
+    },[user])
+
     return <>
-        <body>
+        <div>
             <header className="signUp-header">
                 <button onClick={() => navigate("/")} className="go-home">
-                    <AiOutlineHome size={20}></AiOutlineHome>
+                    <AiOutlineHome size={30}></AiOutlineHome>
                 </button>
-                <h3>"Coisas"</h3>
+
+                <div>
+                    <FaUserAlt size={25} />
+                    <h3>{user?.email}</h3>
+                </div>
             </header>
             <main>
                 <form className="account-form" onSubmit={(e) => onSubmitHandler(e)}>
@@ -48,7 +59,7 @@ function SignUp() {
                     <button type="submit">Signup</button>
                 </form>
             </main>
-        </body>
+        </div>
 
     </>
 }

@@ -1,3 +1,15 @@
+@keyframes slide-in-bck-center {
+  0% {
+    -webkit-transform: translateZ(600px);
+    transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,16 +22,19 @@ header {
   width: 100vw;
   height: 6vh;
   background-color: #22254b;
+  padding: 4px;
 }
 header button {
   background: #22254b;
+  box-sizing: border-box;
   border-radius: 50px;
   border: 1px solid #fff;
   color: #fff;
   padding: 0 16px;
   font-size: 16px;
   cursor: pointer;
-  height: 40px;
+  min-height: 50px;
+  min-width: 50px;
   margin-left: 20px;
 }
 header img {
@@ -41,6 +56,19 @@ header input {
 header input::placeholder {
   color: white;
   opacity: 0.5;
+}
+header .loggedUser {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+  color: white;
+  align-items: center;
+}
+header .loggedUser button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 main {
@@ -234,6 +262,33 @@ main .movieCard .moreInfo--show {
 }
 .account-form button:hover {
   transform: scale(1.05);
+}
+
+.signUp-header {
+  color: white;
+}
+.signUp-header div {
+  display: flex;
+  margin-right: 40px;
+  align-items: center;
+  gap: 10px;
+}
+.signUp-header button {
+  display: flex;
+  align-items: center;
+}
+
+.success-message {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-message .slide-in-bck-center {
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bck-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /*# sourceMappingURL=index.css.map */

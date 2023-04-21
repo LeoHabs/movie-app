@@ -11,7 +11,6 @@ function UserProvider({ children }) {
             setUser(user);
         });
     };
-    
     useEffect(() => {
         monitorStateChange();
     }, []);
