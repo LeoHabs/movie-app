@@ -29,7 +29,6 @@ function SignIn() {
 
 
     useEffect(() => {
-        console.log("asdasd")
         user ? setIsSuccess(true) : setIsSuccess(false);
     }, [user])
 

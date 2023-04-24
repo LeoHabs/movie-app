@@ -32,9 +32,10 @@ export default function Header() {
     return <>
         <header>
             {getLeftElement()}
-            <LanguageSelector></LanguageSelector>
+            <LanguageSelector />
+            {user ? <button onClick={() => navigate("favorites")}>Favorites</button> : null}
             <button onClick={() => { comingBtnState.setClicked(!comingBtnState.btnClicked) }}>Coming Soon</button>
-            <SearchForm></SearchForm>
+            <SearchForm />
         </header>
     </>
 }

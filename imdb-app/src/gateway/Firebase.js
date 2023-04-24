@@ -1,9 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 class Firebase {
     app = null;
     auth = null;
+    firestore = null;
 
     constructor() {
         this.app = initializeApp({
@@ -16,6 +18,7 @@ class Firebase {
             measurementId: "G-PB4EDKV50P"
         });
         this.auth = getAuth(this.app);
+        this.firestore = getFirestore(this.app);
     };
 };
 

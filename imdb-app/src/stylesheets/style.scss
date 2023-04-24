@@ -127,6 +127,7 @@ main {
     }
 
     #more-info {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -315,4 +316,131 @@ main {
       cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-in-bck-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+}
+
+.fav-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorites-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #373b69;
+}
+
+.favorites-header {
+  position: relative;
+  background-color: #22254b;
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+
+  button {
+    position: absolute;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    left: 30px;
+  }
+
+  h3 {
+    position: absolute;
+    right: 30px;
+  }
+}
+
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 95vh;
+  width: 100%;
+  background-color: $secondary-color;
+  overflow-y: scroll;
+
+  .movieCard {
+    position: relative;
+    cursor: pointer;
+    background-color: $primary-color;
+    box-sizing: border-box;
+    margin: 10px;
+    color: white;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px black;
+    img {
+      height: 450px;
+      width: 300px;
+      border-radius: 5px 5px 0px 0px;
+    }
+    div:first-of-type {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 300px;
+      height: 100px;
+      padding: 20px;
+      line-break: strict;
+      z-index: 1;
+      overflow-y: hidden;
+      h4 {
+        background-color: $secondary-color;
+        padding: 4px;
+        border-radius: 4px;
+        width: fit-content;
+        margin: 5px 5px 5px 5px;
+        height: fit-content;
+      }
+    }
+
+    #more-info {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 5px;
+      top: 0;
+      height: 100%;
+      background-color: white;
+      color: #373b69;
+      z-index: 2;
+      padding: 25px;
+      transition: opacity 0.4s;
+
+      h3 {
+        font-size: 25px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    .moreInfo--hidden {
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    .moreInfo--show {
+      opacity: 0.95;
+    }
+  }
+}
+
+.favorites-card {
+  box-shadow: 0px 1px 10px black;
 }

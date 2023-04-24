@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserProvider.js";
 import { FaUserAlt } from "react-icons/fa";
+import { doc, setDoc } from "firebase/firestore";
 
 
 function SignUp() {
@@ -16,20 +17,23 @@ function SignUp() {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            createUserWithEmailAndPassword(
-                Firebase.auth,
-                emailInput,
-                passwordInput
-            )
+            const {
+                user: { uid, email: userEmail }
+            } = await createUserWithEmailAndPassword(Firebase.auth, emailInput, passwordInput);
+            const userRef = doc(Firebase.firestore, "users", uid);
+            await setDoc(userRef, {
+                email: userEmail
+            });
+
         } catch (error) {
             console.log({ error });
         }
 
     };
 
-    useEffect(()=>{
-        
-    },[user])
+    useEffect(() => {
+
+    }, [user])
 
     return <>
         <div>
